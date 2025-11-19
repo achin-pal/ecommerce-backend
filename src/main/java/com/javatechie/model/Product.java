@@ -21,12 +21,23 @@ public class Product {
   private String description;
 
   @Column(name = "price")
-  private String price;
+  private Integer price;
 
-  @Column(name = "discounted_price")
-  private String discounted_price;
+  @Column(name = "discountedPrice")
+  private String discountedPrice;
 
-  private String quantity;
+  @Column(name = "discountPresent")
+  private int discountPresent;
+
+  public int getDiscountedPresent() {
+    return discountPresent;
+  }
+
+  public void setDiscountedPresent(int discountPresent) {
+    this.discountPresent = discountPresent;
+  }
+
+  private Integer quantity;
 
   private String brand;
 
@@ -91,27 +102,27 @@ public class Product {
     this.description = description;
   }
 
-  public String getPrice() {
+  public Integer getPrice() {
     return price;
   }
 
-  public void setPrice(String price) {
+  public void setPrice(Integer price) {
     this.price = price;
   }
 
   public String getDiscounted_price() {
-    return discounted_price;
+    return discountedPrice;
   }
 
-  public void setDiscounted_price(String discounted_price) {
-    this.discounted_price = discounted_price;
+  public void setDiscounted_price(String discountedPrice) {
+    this.discountedPrice = discountedPrice;
   }
 
-  public String getQuantity() {
+  public Integer getQuantity() {
     return quantity;
   }
 
-  public void setQuantity(String quantity) {
+  public void setQuantity(Integer quantity) {
     this.quantity = quantity;
   }
 
@@ -179,12 +190,31 @@ public class Product {
     this.createdAt = createdAt;
   }
 
-  public Product(Long id, String title, String description, String price, String discounted_price, String quantity, String brand, String color, String imageUrl, Set<Sizes> sizes, List<Review> reviewList, List<Rating> ratingList, String numRating, Category category, LocalDateTime createdAt) {
+  public Product(Long id, String title, String description, Integer price, String discountedPrice, int discountPresent, Integer quantity, String brand, String color, String imageUrl, Set<Sizes> sizes, List<Review> reviewList, List<Rating> ratingList, String numRating, Category category, LocalDateTime createdAt) {
     this.id = id;
     this.title = title;
     this.description = description;
     this.price = price;
-    this.discounted_price = discounted_price;
+    this.discountedPrice = discountedPrice;
+    this.discountPresent = discountPresent;
+    this.quantity = quantity;
+    this.brand = brand;
+    this.color = color;
+    this.imageUrl = imageUrl;
+    this.sizes = sizes;
+    this.reviewList = reviewList;
+    this.ratingList = ratingList;
+    this.numRating = numRating;
+    this.category = category;
+    this.createdAt = createdAt;
+  }
+
+  public Product(Long id, String title, String description, Integer price, String discountedPrice, Integer quantity, String brand, String color, String imageUrl, Set<Sizes> sizes, List<Review> reviewList, List<Rating> ratingList, String numRating, Category category, LocalDateTime createdAt) {
+    this.id = id;
+    this.title = title;
+    this.description = description;
+    this.price = price;
+    this.discountedPrice = discountedPrice;
     this.quantity = quantity;
     this.brand = brand;
     this.color = color;

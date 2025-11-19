@@ -18,11 +18,11 @@ public class Category {
   private int level;
 
   public Category getCategoryPrent() {
-    return categoryPrent;
+    return parentCategory;
   }
 
   public void setCategoryPrent(Category categoryPrent) {
-    this.categoryPrent = categoryPrent;
+    this.parentCategory = categoryPrent;
   }
 
   public int getLevel() {
@@ -43,7 +43,7 @@ public class Category {
 
   @ManyToOne(fetch = FetchType.EAGER)
   @JoinColumn(name = "parent_cat_id")
-  private Category categoryPrent;
+  private Category parentCategory;
 
 
   public Long getId() {
@@ -57,10 +57,10 @@ public class Category {
   public Category() {
   }
 
-  public Category(Long id, String name, int level, Category categoryPrent) {
+  public Category(Long id, String name, int level, Category parentCategory) {
     this.id = id;
     this.name = name;
     this.level = level;
-    this.categoryPrent = categoryPrent;
+    this.parentCategory = parentCategory;
   }
 }

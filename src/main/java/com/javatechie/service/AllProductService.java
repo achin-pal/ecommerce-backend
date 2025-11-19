@@ -19,7 +19,7 @@ public interface AllProductService {
 
     public Page<Product> getAllProducts
             (String category,List<String> colors,List<String> sizes,
-             Integer minPrice, Integer maxPrice, Integer minDis, String sort,
+             Integer minPrice, Integer maxPrice, Integer minDis, String sort, String stock,
              Integer pageNum, Integer pageSize) throws ProductException;
 
     public List<Product> findProductsByCategory(String Category) throws ProductException;
