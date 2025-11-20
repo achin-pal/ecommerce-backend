@@ -1,13 +1,15 @@
 package com.javatechie.model;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 @Entity
 @Table(name = "order_item")
 public class OrderItem {
@@ -107,18 +109,4 @@ public class OrderItem {
         this.deliveryDate = deliveryDate;
     }
 
-    public OrderItem(Long id, Order order, Product product, String size, int quantity, Integer price, Integer discountedPrice, Long userId, LocalDateTime deliveryDate) {
-        this.id = id;
-        this.order = order;
-        this.product = product;
-        this.size = size;
-        this.quantity = quantity;
-        this.price = price;
-        this.discountedPrice = discountedPrice;
-        this.userId = userId;
-        this.deliveryDate = deliveryDate;
-    }
-
-    public OrderItem() {
-    }
 }

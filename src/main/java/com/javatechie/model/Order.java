@@ -7,9 +7,11 @@ import lombok.*;
 import java.time.LocalDateTime;
 import java.util.*;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 @Entity
 public class Order {
     @Id
@@ -34,6 +36,7 @@ public class Order {
 
     @OneToOne
     private Address shippingAddress;
+
 
 
     @ManyToOne
