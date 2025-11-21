@@ -34,6 +34,6 @@ public class  CartItem {
 
     private int discountedPrice;
 
-    private int userId;
+    private Long userId;
 
 }
